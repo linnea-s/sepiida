@@ -1,0 +1,10 @@
+Starting a new translation:
+ msginit -i i18n/sepiida-gtk/sepiida-gtk.pot -o i18n/sepiida-gtk/nb.po
+
+Updating sepiida-gtk.pot:
+ python setup_gtkclient.py build_i18n -p i18n/sepiida-gtk -d sepiida-gtk
+ rm -rf build/
+
+Updating translations:
+ python setup_gtkclient.py build_i18n -p i18n/sepiida-gtk -d sepiida-gtk --merge-po
+ rm -rf build/

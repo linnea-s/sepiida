@@ -1,0 +1,2 @@
+# This file is used by the Sepiida server to verify host keys.
+# Hint: ssh-keyscan -t rsa host >> /etc/sepiida/known_hosts

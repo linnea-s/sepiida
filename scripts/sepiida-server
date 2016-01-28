@@ -1,0 +1,47 @@
+#!/usr/bin/python
+# Copyright 2009 Linnea Skogtvedt <linnea@linuxavdelingen.no>
+#
+# This file is part of Sepiida.
+#
+# Sepiida is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Sepiida is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Sepiida.  If not, see <http://www.gnu.org/licenses/>.
+
+from sepiida.server import ServerFactory, config
+from twisted.application import service, internet
+from twisted.internet import reactor
+from twisted.python import log
+
+
+config.reload()
+cfg = config.configuration
+
+if cfg.getboolean('Server', 'log debug'):
+    def log_debug(*args, **kwargs):
+        log.msg(*args, **kwargs)
+else: 
+    def log_debug(*args, **kwargs):
+        pass
+
+log.debug = log_debug
+
+application = service.Application('sepiida-server')
+serviceCollection = service.IServiceCollection(application)
+internet.UNIXServer(cfg.get('Server', 'unix socket'),
+        ServerFactory()).setServiceParent(serviceCollection)
+
+if __name__ == '__main__':
+    import sys
+    log.startLogging(sys.stdout, setStdout=0)
+    service.IServiceCollection(application).privilegedStartService()
+    service.IServiceCollection(application).startService()
+    reactor.run()

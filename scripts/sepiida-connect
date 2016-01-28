@@ -1,0 +1,2 @@
+#!/bin/sh
+exec socat - UNIX-CONNECT:/var/run/sepiida-server/server.sock

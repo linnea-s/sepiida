@@ -1,0 +1,30 @@
+#!/bin/bash
+doc="Used by sepiida agent to open a local port forwarding to VNC on a LTSP thin client.
+Arguments:
+ local port to listen on
+ remote host
+ remote port
+ remote user
+ SSH key
+ HostKeyAlias
+ VNC password file on client
+Reads suggested VNC password on stdin, and writes pw=password on stdout (inside the SSH command)
+when the connection is ready."
+
+if [ $# != 7 ]
+then
+  echo "$doc" >&2
+  exit 1
+fi
+
+lport=$1
+rhost=$2
+rport=$3
+ruser=$4
+keyfile=$5
+alias=$6
+vncpwfile=$7
+
+
+remote_cmd="read password && echo \$password > $vncpwfile && echo pw=\$password && sleep 10"
+ssh -i $keyfile -o HostKeyAlias=$alias -o CheckHostIP=no -o BatchMode=yes -S /dev/null -L ${lport}:localhost:${rport} ${ruser}@${rhost} "$remote_cmd"

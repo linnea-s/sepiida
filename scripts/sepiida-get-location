@@ -1,0 +1,40 @@
+#!/usr/bin/python
+import sys
+from fnmatch import fnmatch
+import re
+
+if __name__ == '__main__':
+    try:
+        server, client, hwaddr = sys.argv[1:]
+    except ValueError:
+        print >>sys.stderr, 'Usage: %s server client HWAddr' % sys.argv[0]
+        sys.exit(1)
+    
+    def normalizeHWAddr(s):
+        return s.lower().replace(':', '').replace('-', '')
+    
+    # format:
+    # [hostname|HWAddr ..]    library
+    # # comments start with #
+    # Example:
+    # static00 static01 static1*    library
+    machine = (client or server).lower()
+    hwaddr = normalizeHWAddr(hwaddr)
+    rsep = re.compile('\t+| {4,}')
+    f = open('/etc/sepiida/locationmap')
+    for line in f:
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        try:
+            patterns, location = rsep.split(line, 1)
+        except ValueError: # not enough fields
+            print >>sys.stderr, "malformed line: %s" % line
+            continue
+        for pattern in patterns.split():
+            pattern = pattern.lower()
+            if fnmatch(machine, pattern) or fnmatch(hwaddr, normalizeHWAddr(pattern)):
+                print location
+                sys.exit(0)
+    f.close()
+    sys.exit(1)

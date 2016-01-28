@@ -1,0 +1,1 @@
+lib\sepiida\agent\win32svc.py --startup auto --interactive install

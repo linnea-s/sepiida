@@ -1,0 +1,330 @@
+# Norwegian Bokmal translations for sepiida-gtk package.
+# Copyright (C) 2009-2011 Linnea Skogtvedt
+# This file is distributed under the same license as the sepiida-gtk package.
+# Linnea Skogtvedt <linnea@linuxavdelingen.no>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-03 12:55+0100\n"
+"PO-Revision-Date: 2010-12-03 12:54+0100\n"
+"Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../src/sepiida/gtkclient/__init__.py:107
+msgid "Not authorized"
+msgstr "Zugriff nicht authorisiert"
+
+#: ../../src/sepiida/gtkclient/__init__.py:217
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Users"
+msgstr "Benutzer"
+
+#: ../../src/sepiida/gtkclient/__init__.py:218
+msgid "Machines"
+msgstr "Computer"
+
+#: ../../src/sepiida/gtkclient/__init__.py:231
+msgid "_Overview"
+msgstr "_Überblick"
+
+#: ../../src/sepiida/gtkclient/__init__.py:231
+msgid "_Filter..."
+msgstr "_Filter..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:232
+#: ../../src/sepiida/gtkclient/__init__.py:881
+msgid "_View/control..."
+msgstr "_Anzeigen/Kontrolle übernehmen..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:232
+#: ../../src/sepiida/gtkclient/__init__.py:882
+msgid "Send _message..."
+msgstr "Nachricht _senden..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:233
+#: ../../src/sepiida/gtkclient/__init__.py:883
+msgid "_Log out user"
+msgstr "Benutzer _abmelden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:233
+#: ../../src/sepiida/gtkclient/__init__.py:884
+msgid "_Processes"
+msgstr "_Prozesse"
+
+#: ../../src/sepiida/gtkclient/__init__.py:234
+#: ../../src/sepiida/gtkclient/__init__.py:885
+msgid "Loc_k screen"
+msgstr "Bildschirm _sperren"
+
+#: ../../src/sepiida/gtkclient/__init__.py:234
+#: ../../src/sepiida/gtkclient/__init__.py:886
+msgid "Open _URL..."
+msgstr "_URL öffnen..."
+
+#. the value here refers either to the index in self.liststore,
+#. or to the attribute name in the user object
+#: ../../src/sepiida/gtkclient/__init__.py:254
+#: ../../src/sepiida/gtkclient/__init__.py:302
+#: ../../src/sepiida/gtkclient/__init__.py:989
+msgid "Username"
+msgstr "Benutzername"
+
+#: ../../src/sepiida/gtkclient/__init__.py:254
+#: ../../src/sepiida/gtkclient/__init__.py:303
+#: ../../src/sepiida/gtkclient/__init__.py:989
+msgid "Client"
+msgstr "Client"
+
+#: ../../src/sepiida/gtkclient/__init__.py:254
+#: ../../src/sepiida/gtkclient/__init__.py:270
+#: ../../src/sepiida/gtkclient/__init__.py:304
+msgid "Location"
+msgstr "Ort"
+
+#: ../../src/sepiida/gtkclient/__init__.py:254
+#: ../../src/sepiida/gtkclient/__init__.py:303
+msgid "Name"
+msgstr "Name"
+
+#: ../../src/sepiida/gtkclient/__init__.py:254
+#: ../../src/sepiida/gtkclient/__init__.py:303
+msgid "Server"
+msgstr "Server"
+
+#: ../../src/sepiida/gtkclient/__init__.py:254
+msgid "Login time"
+msgstr "Angemeldet seit"
+
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Sepiida server"
+msgstr "Sepiida Server"
+
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Server/workstation"
+msgstr "Server/Arbeitsstation"
+
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Load"
+msgstr "Last"
+
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Uptime"
+msgstr "Uptime"
+
+#: ../../src/sepiida/gtkclient/__init__.py:270
+msgid "Operating system"
+msgstr "Betriebssystem"
+
+#: ../../src/sepiida/gtkclient/__init__.py:284
+msgid "_Login"
+msgstr "_Anmelden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:285
+msgid "_Shutdown"
+msgstr "_Herunterfahren"
+
+#: ../../src/sepiida/gtkclient/__init__.py:286
+msgid "_Reboot"
+msgstr "_Neustart"
+
+#: ../../src/sepiida/gtkclient/__init__.py:302
+msgid "Group"
+msgstr "Gruppe"
+
+#: ../../src/sepiida/gtkclient/__init__.py:325
+msgid "Attribute"
+msgstr "Attribut"
+
+#: ../../src/sepiida/gtkclient/__init__.py:326
+msgid "Value"
+msgstr "Wert"
+
+#: ../../src/sepiida/gtkclient/__init__.py:358
+msgid "Invert"
+msgstr "Invertieren"
+
+#: ../../src/sepiida/gtkclient/__init__.py:374
+msgid "Connect"
+msgstr "Verbinden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:379
+msgid "SSH host/alias:"
+msgstr "SSH Host/Alias:"
+
+#: ../../src/sepiida/gtkclient/__init__.py:400
+msgid "Connection failed"
+msgstr "Verbindung fehlgeschlagen"
+
+#: ../../src/sepiida/gtkclient/__init__.py:403
+#, python-format
+msgid "Connection to %s failed: %s"
+msgstr "Verbindung mit %s ist fehlgeschlagen: %s"
+
+#: ../../src/sepiida/gtkclient/__init__.py:404
+msgid "Do you want to reconnect?"
+msgstr "Soll die Verbindung wieder hergestellt werden?"
+
+#: ../../src/sepiida/gtkclient/__init__.py:449
+#, python-format
+msgid "%(total_users)d user logged in, %(total_shown)d shown"
+msgid_plural "%(total_users)d users logged in, %(total_shown)d shown"
+msgstr[0] "%(total_users)d Benutzer angemeldet, %(total_shown)d angezeigt"
+msgstr[1] "%(total_users)d Benutzer angemeldet, %(total_shown)d angezeigt"
+
+#: ../../src/sepiida/gtkclient/__init__.py:453
+#, python-format
+msgid "%(total_machines)d machine"
+msgid_plural "%(total_machines)d machines"
+msgstr[0] "%(total_machines)d Computer"
+msgstr[1] "%(total_machines)d Computer"
+
+#: ../../src/sepiida/gtkclient/__init__.py:456
+#, python-format
+msgid "%(msg_users)s, %(msg_machines)s"
+msgstr "%(msg_users)s, %(msg_machines)s"
+
+#. 1d 10h 24m
+#: ../../src/sepiida/gtkclient/__init__.py:544
+#, python-format
+msgid "%(days)dd %(hours)dh %(minutes)dm"
+msgstr "%(days)dd %(hours)dt %(minutes)dm"
+
+#: ../../src/sepiida/gtkclient/__init__.py:678
+msgid "Send message"
+msgstr "Nachricht senden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:678
+msgid "Message:"
+msgstr "Nachricht:"
+
+#: ../../src/sepiida/gtkclient/__init__.py:691
+msgid "Open URL"
+msgstr "Öffne URL"
+
+#: ../../src/sepiida/gtkclient/__init__.py:691
+msgid "URL:"
+msgstr "URL:"
+
+#: ../../src/sepiida/gtkclient/__init__.py:704
+msgid "Log out users"
+msgstr "Benutzer abmelden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:705
+#, python-format
+msgid "Log out %(n_users)d user?"
+msgid_plural "Log out %(n_users)d users?"
+msgstr[0] "%(n_users)d Benutzer abmelden?"
+msgstr[1] "%(n_users)d Benutzer abmelden?"
+
+#: ../../src/sepiida/gtkclient/__init__.py:741
+msgid "Lock screen"
+msgstr "Bildschirm sperren"
+
+#: ../../src/sepiida/gtkclient/__init__.py:742
+#, python-format
+msgid "Lock screen of %(n_users)d user?"
+msgid_plural "Lock screens of %(n_users)d users?"
+msgstr[0] "Bildschirm für %(n_users)d Benutzer sperren?"
+msgstr[1] "Bildschirm für %(n_users)d Benutzer sperren?"
+
+#: ../../src/sepiida/gtkclient/__init__.py:755
+#, python-format
+msgid "View/control (%s@%s@%s)"
+msgstr "Anzeigen/Kontrolle übernehmen (%s@%s@%s)"
+
+#: ../../src/sepiida/gtkclient/__init__.py:761
+msgid "Please wait..."
+msgstr "Bitte warten..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:766
+msgid "_Control"
+msgstr "_Kontrolle übernehmen"
+
+#: ../../src/sepiida/gtkclient/__init__.py:768
+msgid "_View"
+msgstr "_Anzeigen"
+
+#: ../../src/sepiida/gtkclient/__init__.py:778
+msgid "Got invalid image data"
+msgstr "Ungültige Bilddaten erhalten"
+
+#: ../../src/sepiida/gtkclient/__init__.py:793
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: ../../src/sepiida/gtkclient/__init__.py:798
+#: ../../src/sepiida/gtkclient/__init__.py:1126
+msgid "Sending request..."
+msgstr "Sende Anfrage..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:812
+msgid "Filter"
+msgstr "Filter"
+
+#: ../../src/sepiida/gtkclient/__init__.py:864
+msgid "Overview"
+msgstr "Übersicht"
+
+#: ../../src/sepiida/gtkclient/__init__.py:946
+msgid "Last updated: %H:%M:%S"
+msgstr "Zuletzt aktualisiert: %H:%M:%S"
+
+#: ../../src/sepiida/gtkclient/__init__.py:975
+msgid "Processes"
+msgstr "Prozesse"
+
+#: ../../src/sepiida/gtkclient/__init__.py:989
+msgid "PID"
+msgstr "PID"
+
+#: ../../src/sepiida/gtkclient/__init__.py:989
+msgid "Command line"
+msgstr "Kommandozeile"
+
+#: ../../src/sepiida/gtkclient/__init__.py:1049
+msgid "End processes"
+msgstr "Prozesse beenden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:1091
+msgid "Opening port forwarding..."
+msgstr "Portweiterleitung wird geöffnet..."
+
+#: ../../src/sepiida/gtkclient/__init__.py:1109
+#, python-format
+msgid "unknown protocol %s"
+msgstr "unbekanntes Protokoll %s"
+
+#. avoid defunct process
+#: ../../src/sepiida/gtkclient/__init__.py:1112
+#, python-format
+msgid "%s client started."
+msgstr "%s Client gestartet."
+
+#: ../../src/sepiida/gtkclient/__init__.py:1125
+msgid "Login"
+msgstr "Anmelden"
+
+#: ../../src/sepiida/gtkclient/__init__.py:1150
+msgid "Shutdown/reboot"
+msgstr "Herunterfahren/Neustart"
+
+#: ../../src/sepiida/gtkclient/__init__.py:1155
+#, python-format
+msgid "Shutdown %(n_machines)d machine?"
+msgid_plural "Shutdown %(n_machines)d machines?"
+msgstr[0] "%(n_machines)d Computer herunterfahren?"
+msgstr[1] "%(n_machines)d Computer herunterfahren?"
+
+#: ../../src/sepiida/gtkclient/__init__.py:1159
+#, python-format
+msgid "Reboot %(n_machines)d machine?"
+msgid_plural "Reboot %(n_machines)d machines?"
+msgstr[0] "%(n_machines)d Computer neustarten?"
+msgstr[1] "%(n_machines)d Computer neustarten?"

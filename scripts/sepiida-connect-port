@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper to avoid hard-coding use of nc or socat in clients which can't open
+# port forwardings without making a new connection (e.g. the GTK+ client).
+exec socat - tcp4:localhost:$1

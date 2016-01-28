@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# from http://munin.projects.linpro.no/browser/trunk/plugins/plugin.sh.in?rev=1966
+clean_fieldname () {
+    # Clean up field name so it complies with munin requirements.
+    #
+    # usage: name="$(clean_fieldname "$item")"
+    # 
+    echo "$@" | sed -e 's/^[^A-Za-z_]/_/' -e 's/[^A-Za-z0-9_]/_/g' -e 's/^.*\([A-Za-z0-9_]\{19\}\)$/\1/'
+}
+
+eval $(sepiida-shclient localhost listServers) || exit 1
+if [ "$1" = config ]
+then
+    echo "graph_title Servers/workstations"
+    echo "graph_args --base 1000 -l 0"
+    echo "graph_scale no"
+    echo "graph_category network"
+    echo "graph_vlabel n"
+    echo "graph_info Number of users logged in on servers/workstations"
+    for ((i=0; i < ${data_0_length}; ++i))
+    do
+        eval "server=\${data_0_${i}_server}"
+        echo "$(clean_fieldname $server).label $server"
+    done
+    echo "total_users.label total users"
+    echo "total_machines.label total machines"
+    exit 0
+fi
+
+for ((i=0; i < ${data_0_length}; ++i))
+do
+    eval "server=\${data_0_${i}_server}"
+    eval "users=\${data_0_${i}_users}"
+    echo "$(clean_fieldname $server).value $users"
+    (( total += users ))
+done
+echo "total_users.value $total"
+echo "total_machines.value ${data_0_length}"
