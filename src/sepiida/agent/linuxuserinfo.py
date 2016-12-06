@@ -130,12 +130,12 @@ class UserInfo(object):
         
         import re
         # What we're matching:
-        # Mon May 25 19:59:23 2009 jss      23043 /bin/bash
+        # Mon May 25 19:59:23 2009 1000      23043 /bin/bash
         re_ps = re.compile(r'^(\S+\s*\S+\s*\S+\s*\S+\s*\S+)\s*(\S+)\s*(\S+)\s*(.+)$')
         re_number = re.compile(r'^\d+$')
         cmd_login = cfg.get('Agent', 'login cmd')
         
-        args = ['ww', '-e', '-o', 'lstart,user,pid,args']
+        args = ['ww', '-e', '-o', 'lstart,uid,pid,args']
         env = {'LC_ALL': 'C'}
         d = utils.getProcessOutput('/bin/ps', args, env)
         wait = defer.waitForDeferred(d)
@@ -149,17 +149,13 @@ class UserInfo(object):
             if not m:
                 log.err('ps regex didn\'t match %s' % line)
                 continue
-            lstart, user, pid, commandline = m.groups()
-            user = user.decode('utf-8')
+            lstart, uid, pid, commandline = m.groups()
             commandline = commandline.decode('utf-8', 'replace')
-            
-            # handle case where ps returns UID, e.g. for long usernames
-            if re_number.match(user):
-                uid = user
-                try:
-                    user = getpwuid(int(uid)).pw_name.decode('utf-8')
-                except KeyError:
-                    continue
+
+            try:
+                user = getpwuid(int(uid)).pw_name.decode('utf-8')
+            except KeyError:
+                continue
                 
             processes.setdefault(user, []).append((int(pid), commandline))
 
